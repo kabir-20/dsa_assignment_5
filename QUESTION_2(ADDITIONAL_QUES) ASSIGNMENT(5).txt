@@ -20,7 +20,7 @@ public:
         head = NULL;
     }
 
-    // Function to insert node at the end
+  
     void insertEnd(int val) {
         Node* newNode = new Node(val);
         if (head == NULL) {
@@ -34,14 +34,14 @@ public:
         temp->next = newNode;
     }
 
-    // Function to reverse nodes in groups of K
+
     Node* reverseInGroups(Node* head, int k) {
         Node* current = head;
         Node* prev = NULL;
         Node* next = NULL;
         int count = 0;
 
-        // Reverse first k nodes
+       
         while (current != NULL && count < k) {
             next = current->next;
             current->next = prev;
@@ -50,19 +50,19 @@ public:
             count++;
         }
 
-        // Recursively reverse next groups
+   
         if (next != NULL)
             head->next = reverseInGroups(next, k);
 
         return prev;
     }
 
-    // Function to reverse using class head
+ 
     void reverseGroups(int k) {
         head = reverseInGroups(head, k);
     }
 
-    // Function to display the list
+ 
     void display() {
         Node* temp = head;
         while (temp != NULL) {
@@ -75,7 +75,7 @@ public:
 
 int main() {
     LinkedList list;
-    // Example: Linked list = 1->2->3->4->5->6->7->8->9, K = 3
+   
     list.insertEnd(1);
     list.insertEnd(2);
     list.insertEnd(3);
