@@ -16,7 +16,7 @@ public:
         head = NULL;
     }
 
-    // Function to insert at end
+   
     void insert(int value) {
         Node* newNode = new Node();
         newNode->data = value;
@@ -32,7 +32,7 @@ public:
         }
     }
 
-    // Function to find the middle element
+
     void findMiddle() {
         if (head == NULL) {
             cout << "List is empty!";
@@ -42,7 +42,7 @@ public:
         Node* slow = head;
         Node* fast = head;
 
-        // Move fast by 2 steps and slow by 1 step
+       
         while (fast != NULL && fast->next != NULL) {
             slow = slow->next;
             fast = fast->next->next;
@@ -51,7 +51,7 @@ public:
         cout << "Middle element: " << slow->data << endl;
     }
 
-    // Display list
+
     void display() {
         Node* temp = head;
         while (temp != NULL) {
@@ -67,7 +67,6 @@ public:
 int main() {
     LinkedList list;
 
-    // Example: 1->2->3->4->5
     list.insert(1);
     list.insert(2);
     list.insert(3);
