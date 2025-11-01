@@ -20,7 +20,7 @@ public:
         head = NULL;
     }
 
-    // Insert node at the end
+   
     void insertEnd(int val) {
         Node* newNode = new Node(val);
         if (head == NULL) {
@@ -33,7 +33,7 @@ public:
         temp->next = newNode;
     }
 
-    // Function to create a loop for testing
+   
     void createLoop(int pos) {
         if (pos == 0) return;
         Node* temp = head;
@@ -47,12 +47,11 @@ public:
         }
         temp->next = loopNode;  // creating a loop
     }
-
-    // Detect and remove loop (Floyd’s Cycle Detection method)
+)
     void removeLoop() {
         Node *slow = head, *fast = head;
 
-        // Detect loop
+   
         while (slow != NULL && fast != NULL && fast->next != NULL) {
             slow = slow->next;
             fast = fast->next->next;
@@ -61,10 +60,9 @@ public:
             }
         }
 
-        // If loop exists
+      
         if (slow == fast) {
-            slow = head;
-            // Special case: when loop starts at head
+       
             if (slow == fast) {
                 while (fast->next != slow)
                     fast = fast->next;
@@ -74,11 +72,11 @@ public:
                     fast = fast->next;
                 }
             }
-            fast->next = NULL; // Remove loop
+            fast->next = NULL; 
         }
     }
 
-    // Display list
+  
     void display() {
         Node* temp = head;
         while (temp != NULL) {
@@ -96,10 +94,10 @@ int main() {
     list.insertEnd(3);
     list.insertEnd(6);
 
-    // Creating loop for test: 6 → 7
+    
     list.createLoop(2);
 
-    list.removeLoop(); // Removes loop if it exists
+    list.removeLoop();
 
     cout << "Linked List after removing loop: ";
     list.display();
