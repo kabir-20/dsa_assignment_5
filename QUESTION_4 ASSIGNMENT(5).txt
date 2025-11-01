@@ -16,7 +16,6 @@ public:
         head = NULL;
     }
 
-    // Function to insert a new node at the end
     void insert(int value) {
         Node* newNode = new Node();
         newNode->data = value;
@@ -31,23 +30,21 @@ public:
             temp->next = newNode;
         }
     }
-
-    // Function to reverse the linked list
+t
     void reverse() {
         Node* prev = NULL;
         Node* current = head;
         Node* next = NULL;
 
         while (current != NULL) {
-            next = current->next;   // store next node
-            current->next = prev;   // reverse current node's pointer
-            prev = current;         // move prev one step ahead
-            current = next;         // move current one step ahead
+            next = current->next;  
+            current->next = prev;  
+            prev = current;         
+            current = next;         
         }
         head = prev; // new head
     }
 
-    // Function to display the linked list
     void display() {
         Node* temp = head;
         while (temp != NULL) {
@@ -61,7 +58,6 @@ public:
 int main() {
     LinkedList list;
 
-    // Example input: 1->2->3->4->NULL
     list.insert(1);
     list.insert(2);
     list.insert(3);
